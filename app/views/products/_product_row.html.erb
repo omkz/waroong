@@ -1,22 +1,20 @@
-<div class="well">
-    
-      <div class="row">
-        <div class="col-xs-8">
-          <h4><%= product.name %></small></h4>
-        </div>
-        <div class="col-xs-4">
-    
-          <%= form_for order_item, remote: true do |f| %>
-          <h4 class="text-right">Unit Price: <span style="color: green"><%= number_to_currency product.price %></span></h4>
-            <div class="input-group">
-              <%= f.number_field :quantity, value: 1, class: "form-control", min: 1 %>
-              <div class="input-group-btn">
-                <%= f.hidden_field :product_id, value: product.id %>
-                <%= f.submit "Add to Cart", class: "btn btn-primary" %>
+<div class="container">
+    <div class="row">
+      <% @products.each do |product| %>
+        <div class="col-md-4">
+            <div class="card mb-4 box-shadow">
+              <img class="card-img-top" data-src="holder.js/100px225?theme=thumb&bg=55595c&fg=eceeef&text=Thumbnail" alt="Card image cap">
+              <div class="card-body">
+                <p class="card-text"><%= product.name %></p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-sm btn-outline-secondary">$ <%= product.price %></button>
+                  </div>
+                  <!-- <small class="text-muted">top</small> -->
+                </div>
               </div>
             </div>
-          <% end %>
-        </div>
-    
-      </div>
+          </div>
+        <% end %>
     </div>
+  </div>
