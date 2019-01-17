@@ -8,7 +8,7 @@ class Product < ApplicationRecord
 
   def image_header_variant
     variation =
-      ActiveStorage::Variation.new(Uploads.resize_to_fit(width: 300, height: 300, blob: image.blob))
+      ActiveStorage::Variation.new(Uploads.resize_to_limit(width: 500, height: -1, blob: image.blob))
     ActiveStorage::Variant.new(image.blob, variation)
   end
 
