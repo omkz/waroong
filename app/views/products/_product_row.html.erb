@@ -12,7 +12,7 @@
     <% @products.each do |product| %>
     <div class="col-lg-3 col-md-6 mb-4">
       <div class="card">
-        <%= image_tag product.image.variant(resize: "500x-1"), class: "card-img-top" %>
+        <%= image_tag product.image.variant(resize_to_fill: [500, 325]), class: "card-img-top" %>
         <div class="card-body">
           <h4 class="card-title"><%= product.name %></h4>
           <p class="card-text">Price: <%= product.price %></p>

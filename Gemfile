@@ -16,7 +16,7 @@ gem 'jquery-rails'
 gem "administrate"
 gem 'administrate-field-active_storage'
 gem 'stripe'
-gem 'mini_magick'
+gem 'image_processing', '~> 1.2'
 
 group :development, :test do
   gem 'dotenv-rails'
