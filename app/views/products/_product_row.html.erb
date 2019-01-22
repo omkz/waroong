@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <% @products.each do |product| %>
-    <div class="col-lg-2 col-md-6 mb-4">
+    <div class="col-lg-3 col-md-6 mb-4">
       <%= link_to product, class: "card" do %>
         <%= image_tag product.image.variant(resize_to_fill: [192, 192]), class: "card-img-top" %>
           <div class="card-body">
