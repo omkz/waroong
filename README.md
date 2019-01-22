@@ -30,7 +30,7 @@ Before you get started, the following needs to be installed:
 1. Get the code. Clone this git repository:
 
   ```bash
-  git clone git://github.com/omkz/coolpics.git
+  git clone git://github.com/omkz/rails-store.git
   cd rails-store
   ```
 
