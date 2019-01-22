@@ -13,3 +13,9 @@ body {
 .card {
   height: 100%;
 }
+
+a.card,
+a.card:hover {
+  color: #212529;
+  text-decoration: none;
+}

@@ -1,18 +1,19 @@
 <div class="container">
-  <div class="row text-center">
+  <div class="row">
     <% @products.each do |product| %>
     <div class="col-lg-2 col-md-6 mb-4">
-      <div class="card">
-        <%= image_tag product.image.variant(resize_to_fill: [500, 325]), class: "card-img-top" %>
-        <div class="card-body">
-          <p class=""><%= product.name %></p>
-          <p class="card-text">Price: <%= product.price %></p>
-        </div>
-        <div class="card-footer">
-          <%= link_to "show", product, class: "btn btn-primary" %>
-        </div>
-      </div>
+      <%= link_to product, class: "card" do %>
+        <%= image_tag product.image.variant(resize_to_fill: [192, 192]), class: "card-img-top" %>
+          <div class="card-body">
+            <p class="card-text"><%= product.name %></p>   
+          </div>
+          <div class="card-footer text-muted">
+              <p class="card-text">Price: <%= product.price %></p>
+          </div>
+      <% end %>
     </div>
     <% end %>
   </div>
 </div>
+
+
