@@ -7,11 +7,11 @@ Rails-Store is an open-source e-commerce solution based on Ruby on Rails 6.
 ## Tech Stack
 
 - Ruby 2.6.0  
-- Ruby on Rails 6.0.0.alpha
+- Ruby on Rails 6.x.x
 - PostgreSQL 9.5
 - jQuery
 - Gem: 
-    -  [devise](https://github.com/plataformatec/devise) | Authenticatio
+    -  [devise](https://github.com/plataformatec/devise) | Authentication
     -  [pg](https://github.com/ged/ruby-pg) | PostgreSQL library for Ruby
 
 ## Installation
