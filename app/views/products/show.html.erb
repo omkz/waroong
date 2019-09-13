@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="card">
-      <%= image_tag(@product.image, class: "img-fluid") if @product.image.attached? %>
+      <%= image_tag(@product.image.variant(resize_to_fill: [360, 360]), class: "img-fluid") if @product.image.attached? %>
       <div class="card-body">
         <h5 class="card-title"><%= @product.name %></h5>
         <%= form_for @order_item, remote: true do |f| %>
