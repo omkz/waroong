@@ -1,21 +1,20 @@
 @import "bootstrap";
 
 body {
-  padding-top: 5rem;
-}
-
-@media (min-width: 40em) {
-  body {
-    padding-top: 6rem;
-  }
+  padding-top: 6rem;
+  font-family: "Open Sans", serif;
+  background: #ECF0F3;
 }
 
 .card {
   height: 100%;
 }
 
-a.card,
+a.card {
+  color: #212529;
+}
 a.card:hover {
   color: #212529;
-  text-decoration: none;
+  text-decoration: underline overline dotted red;
 }
+
