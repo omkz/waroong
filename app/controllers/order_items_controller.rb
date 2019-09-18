@@ -1,11 +1,18 @@
 class OrderItemsController < ApplicationController
+
   def create
-    @order = current_order
-    @order.order_items.new(order_item_params) do
-      @order.order_status_id = 1
+    @order = OrderItem.where("product_id = ? AND order_id = ?", params[:order_item][:product_id], session[:order_id]).first
+    if @order
+      @order.increment(:quantity)
+      @order.save
+    else
+      @order = current_order
+      @order.order_items.new(order_item_params) do
+        @order.order_status_id = 1
+      end
+      @order.save
+      session[:order_id] = @order.id
     end
-    @order.save
-    session[:order_id] = @order.id
   end
 
   def update
