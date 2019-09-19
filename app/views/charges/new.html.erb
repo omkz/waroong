@@ -1,0 +1,37 @@
+<div class="container">
+  <div class="row ">
+    <div class="col-md-4 offset-md-4 p-4 card bg-light">
+      <%= form_with(url: "/charges", method: "post", local: true, id: "new_registration") do %>
+        <%= javascript_include_tag "https://js.stripe.com/v2/" %>
+        <script>
+            Stripe.setPublishableKey(<%= Rails.application.credentials.stripe[:stripe_publishable_key] %>);
+        </script>
+        <div class="form-group">
+          <%= label_tag(:email, "Email:") %>
+          <%= text_field_tag :email, nil, class: "form-control" %>
+        </div>
+        <div class="form-group">
+          <%= label_tag "Card Number", nil, required: true %>
+          <%= text_field_tag :card_number, nil, class: "form-control", data: {stripe: "number"} %>
+        </div>
+        <div class="form-group">
+          <%= label_tag "Card Verification", nil, required: true %>
+          <%= text_field_tag :card_verification, nil, class: "form-control", data: {stripe: "cvv"} %>
+        </div>
+        <%= label_tag "Card Expires", nil, required: true %> <br />
+        <div class="custom-control custom-radio custom-control-inline">
+          <%= select_tag :exp_month, options_for_select(Date::MONTHNAMES.compact.each_with_index.map { |name, i| ["#{i + 1} - #{name}", i + 1] }), include_blank: false, data: {stripe: "exp-month"}, class: "custom-select mr-2" %>
+          <%= select_tag :exp_year, options_for_select((Date.today.year..(Date.today.year + 10)).to_a), include_blank: false, data: {stripe: "exp-year"}, class: "custom-select mr-2" %>
+        </div>
+        <br />
+        <div class="form-group mt-5">
+          <%= submit_tag "Pay Now", class: "btn btn-info btn-block" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+
+
+

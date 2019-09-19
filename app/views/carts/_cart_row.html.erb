@@ -1,31 +1,25 @@
 <div class="row">
-    <div class="col-md-8 offset-md-2">
-        <div class="card">
-            <div class="row">
-                <div class="col-md-4">
-                    <%= image_tag(product.image.variant(resize_to_fill: [192, 192]), class: "img-fluid") if product.image.attached? %>
-                </div>
-                <div class="col">
-                    <div class="card-body">
-                        <%= form_for order_item, remote: true do |f| %>
-                        <div class="form-group">
-                            <%= f.number_field :quantity, value: order_item.quantity.to_i, class: "form-control", min: 1 %>
-                            <%= f.hidden_field :product_id, value: product.id %>
-                        </div>
-                        <div class="btn-group">
-                            <%= f.submit "Update Quantity", class: "btn btn-primary" %>
-                            <%= link_to "Delete", order_item, { data: { confirm: "Are you sure you wish to delete the product '#{order_item.product.name}' from your cart?" }, method: :delete, remote: true, class: "btn btn-danger" } %>
-                        </div>
-                        <p>
-                          Unit Price: <%= number_to_currency order_item.unit_price %>
-                        </p>
-                        <p>Total Price:
-                            <%= number_to_currency order_item.total_price %>
-                        </p>
-                    <% end %>
-                    </div>
-                </div>
-            </div>
+  <div class="col-md-4">
+    <%= image_tag(product.image.variant(resize_to_fill: [192, 192]), class: "img-fluid") if product.image.attached? %>
+  </div>
+  <div class="col">
+    <div class="card-body">
+      <%= form_for order_item, remote: true do |f| %>
+        <div class="form-group">
+          <%= f.number_field :quantity, value: order_item.quantity.to_i, class: "form-control", min: 1 %>
+          <%= f.hidden_field :product_id, value: product.id %>
         </div>
+        <div class="btn-group">
+          <%= f.submit "Update Quantity", class: "btn btn-primary" %>
+          <%= link_to "Delete", order_item, {data: {confirm: "Are you sure you wish to delete the product '#{order_item.product.name}' from your cart?"}, method: :delete, remote: true, class: "btn btn-danger"} %>
+        </div>
+        <p>
+          Unit Price: <%= number_to_currency order_item.unit_price %>
+        </p>
+        <p>Total Price:
+          <%= number_to_currency order_item.total_price %>
+        </p>
+      <% end %>
     </div>
+  </div>
 </div>
