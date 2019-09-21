@@ -1,4 +1,5 @@
 @import "bootstrap";
+@import "stripe";
 
 body {
   padding-top: 6rem;
@@ -17,4 +18,3 @@ a.card:hover {
   color: #212529;
   text-decoration: underline overline dotted red;
 }
-
