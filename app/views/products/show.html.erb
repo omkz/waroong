@@ -3,19 +3,20 @@
     <div class="card">
       <%= image_tag(@product.image.variant(resize_to_fill: [360, 360]), class: "img-fluid") if @product.image.attached? %>
       <div class="card-body">
-        <h5 class="card-title"><%= @product.name %></h5>
+        <h3 class="card-title"><%= @product.name %></h3>
         <%= form_for @order_item, remote: true do |f| %>
-        <h4 class="text-right">
-          Unit Price:
-          <span style="color: green"><%= number_to_currency @product.price %></span>
-        </h4>
-        <div class="input-group">
-          <%= f.number_field :quantity, value: 1, class: "form-control", min: 1
-          %>
-          <div class="input-group-btn">
-            <%= f.hidden_field :product_id, value: @product.id %> <%= f.submit "Add to Cart", class: "btn btn-primary" %>
+          <p class="card-text"> Unit Price: <%= number_to_currency @product.price %></p>
+
+
+          <div class="input-group mb-3">
+            <%= f.number_field :quantity, value: 1, class: "form-control", min: 1  %>
+<!--            <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2">-->
+            <div class="input-group-append">
+<!--              <button class="btn btn-outline-secondary" type="button">Button</button>-->
+              <%= f.hidden_field :product_id, value: @product.id %>
+              <%= f.submit "Add to Cart", class: "btn btn-outline-primary" %>
+            </div>
           </div>
-        </div>
         <% end %>
       </div>
     </div>
