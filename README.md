@@ -2,7 +2,7 @@
 
 Rails-Store is an open-source e-commerce solution based on Ruby on Rails 6.
 
-[![Screenshot](https://raw.githubusercontent.com/omkz/rails-store/master/public/Screenshot.png)](https://www.youtube.com/watch?v=bRNvgNMxDqo)
+[![Screenshot](https://raw.githubusercontent.com/omkz/rails-store/master/public/Screenshot.png)](https://www.youtube.com/watch?v=4hOGtcj1WBE)
 
 ## Tech Stack
 
