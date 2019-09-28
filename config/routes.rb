@@ -5,6 +5,7 @@ Rails.application.routes.draw do
       resources :order_items
       resources :order_statuses
       resources :products
+      resources :product_categories
 
       root to: "orders#index"
     end
