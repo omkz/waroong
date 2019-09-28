@@ -59,7 +59,7 @@ class ProductCategoryDashboard < Administrate::BaseDashboard
   # Overwrite this method to customize how product categories are displayed
   # across all pages of the admin dashboard.
   #
-  # def display_resource(product_category)
-  #   "ProductCategory ##{product_category.id}"
-  # end
+  def display_resource(product_category)
+    product_category.name
+  end
 end

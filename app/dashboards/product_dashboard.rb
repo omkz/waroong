@@ -9,6 +9,7 @@ class ProductDashboard < Administrate::BaseDashboard
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
     # order_items: Field::HasMany,
+    product_category: Field::BelongsTo,
     id: Field::Number,
     name: Field::String,
     price: Field::String.with_options(searchable: false),
@@ -24,7 +25,6 @@ class ProductDashboard < Administrate::BaseDashboard
   # By default, it's limited to four items to reduce clutter on index pages.
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = [
-    # :order_items,
     :id,
     :name,
     :price,
@@ -34,7 +34,7 @@ class ProductDashboard < Administrate::BaseDashboard
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = [
-    # :order_items,
+    :product_category,
     :id,
     :name,
     :price,
@@ -48,7 +48,7 @@ class ProductDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
-    # :order_items,
+    :product_category,
     :name,
     :price,
     :active,
