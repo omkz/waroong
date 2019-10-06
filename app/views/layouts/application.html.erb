@@ -12,8 +12,9 @@
   <body>
     <%= render "layouts/header" %>
     <%= render "layouts/alert" %>
-    <main role="main">
+    <div class="container">
       <%= yield %>
-    </main>
+      <%= render "layouts/footer" %>
+    </div>
   </body>
 </html>
