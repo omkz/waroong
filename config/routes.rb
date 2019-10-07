@@ -6,11 +6,12 @@ Rails.application.routes.draw do
       resources :order_statuses
       resources :products
       resources :product_categories
-
       root to: "orders#index"
-    end
+  end
+
   resources :charges
   resources :products, only: [:index, :show]
+  resources :product_categories, only: [:show]
   resource :cart, only: [:show]
   resources :order_items, only: [:create, :update, :destroy]
   root to: "products#index"
