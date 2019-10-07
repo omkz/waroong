@@ -11,9 +11,10 @@ Rails.application.routes.draw do
 
   resources :charges
   resources :products, only: [:index, :show]
-  resources :product_categories, only: [:show]
   resource :cart, only: [:show]
   resources :order_items, only: [:create, :update, :destroy]
+
+  get '/category/:id',  to: 'product_categories#show', as: "category"
   root to: "products#index"
   
 end
