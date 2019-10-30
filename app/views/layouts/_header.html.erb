@@ -11,7 +11,7 @@
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <% @categories.each do |cat| %>
-            <%= link_to cat.name.upcase, category_path(cat), class: "dropdown-item" %>
+            <%= link_to cat.name.capitalize, category_path(cat), class: "dropdown-item" %>
           <% end %>
         </div>
       </li>
