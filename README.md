@@ -1,8 +1,8 @@
-# Rails-Store!
+# Waroong!
 
-Rails-Store is an open-source e-commerce solution based on Ruby on Rails 6.
+Waroong is an open-source e-commerce solution based on Ruby on Rails 6.
 
-[![Screenshot](https://raw.githubusercontent.com/omkz/rails-store/master/public/Screenshot.png)](https://www.youtube.com/watch?v=4hOGtcj1WBE)
+[![Screenshot](https://raw.githubusercontent.com/omkz/waroong/master/public/Screenshot.png)](https://www.youtube.com/watch?v=4hOGtcj1WBE)
 
 ## Tech Stack
 
@@ -31,8 +31,8 @@ Before you get started, the following needs to be installed:
 1. Get the code. Clone this git repository:
 
   ```bash
-  git clone git://github.com/omkz/rails-store.git
-  cd rails-store
+  git clone git://github.com/omkz/waroong.git
+  cd waroong
   ```
 
 1. Install the required gems by running the following command in the project root directory:
@@ -64,4 +64,4 @@ The best way to contribute is to do one of the following :
 
 ## License
 
-Rails-Store is open source under the MIT license. See [LICENSE](LICENSE) for details.
+Waroong is open source under the MIT license. See [LICENSE](LICENSE) for details.
