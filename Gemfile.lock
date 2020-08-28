@@ -179,7 +179,7 @@ GEM
     pg (1.1.4)
     popper_js (1.14.5)
     puma (3.12.1)
-    rack (2.0.7)
+    rack (2.2.3)
     rack-protection (2.0.8.1)
       rack
     rack-test (1.1.0)
