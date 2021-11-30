@@ -29,5 +29,3 @@
 
 #Rubymine artifacts
 /.idea
-
-/config/credentials/development.key
