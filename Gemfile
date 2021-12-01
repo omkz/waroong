@@ -12,7 +12,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'bootsnap', '>= 1.1.0', require: false
 gem "bootstrap", ">= 4.3.1"
 gem 'jquery-rails'
-gem "administrate"
+gem "administrate", '~> 0.16'
 gem 'administrate-field-active_storage'
 gem 'stripe'
 gem 'image_processing', '~> 1.2'
