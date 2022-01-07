@@ -80,9 +80,7 @@ ActiveRecord::Schema.define(version: 2020_08_28_161645) do
     t.datetime "updated_at", null: false
     t.bigint "product_category_id"
     t.text "description"
-    t.bigint "vendor_id"
     t.index ["product_category_id"], name: "index_products_on_product_category_id"
-    t.index ["vendor_id"], name: "index_products_on_vendor_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -101,29 +99,9 @@ ActiveRecord::Schema.define(version: 2020_08_28_161645) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  create_table "vendors", force: :cascade do |t|
-    t.string "name", null: false
-    t.string "email"
-    t.string "avatar"
-    t.string "tagline"
-    t.text "description"
-    t.string "address"
-    t.string "city"
-    t.string "state"
-    t.string "zipcode"
-    t.string "country"
-    t.string "phone"
-    t.bigint "user_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["user_id"], name: "index_vendors_on_user_id"
-  end
-
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "order_items", "orders"
   add_foreign_key "order_items", "products"
   add_foreign_key "orders", "order_statuses"
   add_foreign_key "products", "product_categories"
-  add_foreign_key "products", "vendors"
-  add_foreign_key "vendors", "users"
 end
