@@ -10,8 +10,6 @@ gem 'coffee-rails', '~> 4.2'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem 'bootsnap', '>= 1.1.0', require: false
-gem 'bootstrap', '~> 4.5.3'
-gem 'jquery-rails'
 gem "administrate", '~> 0.16'
 gem 'administrate-field-active_storage'
 gem 'stripe'
@@ -45,3 +43,8 @@ group :test do
 end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+gem "jsbundling-rails", "~> 1.0"
+
+gem "cssbundling-rails", "~> 1.0"
+
+gem "stimulus-rails", "~> 1.0"
