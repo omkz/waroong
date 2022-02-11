@@ -1,37 +1,37 @@
-<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
-  <%= link_to "Waroong", root_path, class: "navbar-brand" %>
-  <button aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbarCollapse" data-toggle="collapse" type="button">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarCollapse">
-    <ul class="navbar-nav mr-auto">
+<nav class="navbar navbar-expand-md navbar-light fixed-top bg-light">
+  <div class="container-fluid">
+    <%= link_to "Waroong", root_path, class: "navbar-brand" %>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <ul class="navbar-nav me-auto mb-2 mb-md-0">
+        <li class="nav-item">
+          <a class="nav-link" href="#">Today's Deals</a>
+        </li>
 
-      <li class="nav-item">
-        <a class="nav-link" href="#">Today's Deals</a>
-      </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Categories
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <% @categories.each do |cat| %>
+              <%= link_to cat.name.capitalize, category_path(cat), class: "dropdown-item" %>
+            <% end %>
+          </ul>
+        </li>
 
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-          Categories
-        </a>
-        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <% @categories.each do |cat| %>
-            <%= link_to cat.name.capitalize, category_path(cat), class: "dropdown-item" %>
-          <% end %>
-        </ul>
-      </li>
-
-      <li class="nav-item">
-        <a class="nav-link" href="#">Gift Cards</a>
-      </li>
-      <form class="form-inline">
-        <input aria-label="Search" class="form-control mr-sm-2" placeholder="Search" type="search">
+        <li class="nav-item">
+          <a class="nav-link" href="#">Gift Cards</a>
+        </li>
+        <form class="form-inline">
+          <input aria-label="Search" class="form-control mr-sm-2" placeholder="Search" type="search">
+        </form>
+      </ul>
+      <form class="d-flex">
+        <%= render 'layouts/cart_text' %>
+        <%= render 'layouts/auth' %>
       </form>
-    </ul>
-
-    <span class="cart-text">
-          <%= render 'layouts/cart_text' %>
-        </span>
-    <%= render 'layouts/auth' %>
+    </div>
   </div>
 </nav>
