@@ -1,14 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-plugin 'bootboot', '~> 0.1.1'
-
-if ENV['DEPENDENCIES_NEXT']
-  gem 'rails', '~> 6.1.4.4'
-else
-  gem 'rails', '~> 6.0.4'
-end
-
+gem 'rails', '~> 6.1.4.4'
 gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 3.11'
 gem 'sass-rails', '>= 5'
@@ -52,13 +45,3 @@ group :test do
 end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
-
-
-Plugin.send(:load_plugin, 'bootboot') if Plugin.installed?('bootboot')
-
-if ENV['DEPENDENCIES_NEXT']
-  enable_dual_booting if Plugin.installed?('bootboot')
-
-  # Add any gem you want here, they will be loaded only when running
-  # bundler command prefixed with `DEPENDENCIES_NEXT=1`.
-end
