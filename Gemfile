@@ -43,8 +43,7 @@ group :test do
 end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
 gem "jsbundling-rails", "~> 1.0"
-
 gem "cssbundling-rails", "~> 1.0"
-
 gem "stimulus-rails", "~> 1.0"

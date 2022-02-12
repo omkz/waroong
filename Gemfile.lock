@@ -357,6 +357,7 @@ DEPENDENCIES
   selenium-webdriver
   spring
   spring-watcher-listen (~> 2.0.0)
+  sprockets-rails
   stimulus-rails (~> 1.0)
   stripe
   turbolinks (~> 5)
