@@ -1,6 +1,5 @@
 import { Application } from "@hotwired/stimulus"
 require("@rails/ujs").start()
-require("turbolinks").start()
 
 const application = Application.start()
 

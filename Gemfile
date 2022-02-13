@@ -2,26 +2,27 @@ source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 gem 'rails', '~> 6.1.4.4'
-gem 'pg', '>= 0.18', '< 2.0'
-gem 'puma', '~> 3.11'
-gem 'sass-rails', '>= 5'
-gem 'uglifier', '>= 1.3.0'
-gem 'coffee-rails', '~> 4.2'
-gem 'turbolinks', '~> 5'
-gem 'jbuilder', '~> 2.5'
-gem 'bootsnap', '>= 1.1.0', require: false
+gem "pg", "~> 1.1"
+gem "puma", "~> 5.0"
+gem 'jbuilder'
+gem 'bootsnap', require: false
 gem "administrate", '~> 0.16'
 gem 'administrate-field-active_storage'
 gem 'stripe'
 gem 'image_processing', '~> 1.2'
 gem 'devise'
 gem 'mailcatcher'
+gem "redis", "~> 4.0"
+gem "sprockets-rails"
+gem "turbo-rails"
+gem "jsbundling-rails", "~> 1.0"
+gem "cssbundling-rails", "~> 1.0"
+gem "stimulus-rails", "~> 1.0"
 
 group :development, :test do
   gem 'dotenv-rails'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-
   gem 'rspec-rails', '~> 5.0.0'
 end
 
@@ -44,6 +45,3 @@ end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
-gem "jsbundling-rails", "~> 1.0"
-gem "cssbundling-rails", "~> 1.0"
-gem "stimulus-rails", "~> 1.0"
