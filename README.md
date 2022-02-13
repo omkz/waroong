@@ -48,7 +48,7 @@ Before you get started, the following needs to be installed:
   bundle exec rails db:setup
   ```
 
-1. Start the development server:
+4. Start the development server:
 
   ```bash
   bin/dev
