@@ -9,7 +9,7 @@ gem 'bootsnap', require: false
 gem "administrate", '~> 0.16'
 gem 'administrate-field-active_storage'
 gem 'stripe'
-gem 'image_processing', '~> 1.2'
+gem 'image_processing', '~> 1.12'
 gem 'devise'
 gem 'mailcatcher'
 gem "redis", "~> 4.0"
